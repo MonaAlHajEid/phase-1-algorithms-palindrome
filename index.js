@@ -1,25 +1,28 @@
-function isPalindrome(word) {
-  // Write your algorithm here
-}
+const isPalindrome = require('../index');
 
-/* 
-  Add your pseudocode here
-*/
+describe('isPalindrome', function() {
+  it('returns true for "abba"', function() {
+    const result = isPalindrome("abba");
+    expect(result).toBe(true);
+  });
 
-/*
-  Add written explanation of your solution here
-*/
+  it('returns true for "racecar"', function() {
+    const result = isPalindrome("racecar");
+    expect(result).toBe(true);
+  });
 
-// You can run `node index.js` to view these console logs
-if (require.main === module) {
-  // add your own custom tests in here
-  console.log("Expecting: true");
-  console.log("=>", isPalindrome("racecar"));
+  it('returns true for "a"', function() {
+    const result = isPalindrome("a");
+    expect(result).toBe(true);
+  });
 
-  console.log("");
+  it('returns false for "robot"', function() {
+    const result = isPalindrome("robot");
+    expect(result).toBe(false);
+  });
 
-  console.log("Expecting: false");
-  console.log("=>", isPalindrome("robot"));
-}
-
-module.exports = isPalindrome;
+  it('returns false for "ab"', function() {
+    const result = isPalindrome("ab");
+    expect(result).toBe(false);
+  });
+});
